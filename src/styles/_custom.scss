@@ -6,6 +6,32 @@ html {
   hyphens: auto;
 }
 
+body {
+  color: var(--text-color);
+  /* background: var(--background-color); */
+  background-color: var(--bkg-color);
+}
+a {
+  color: var(--anchor-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  /* defaults to dark theme */
+  body.dark-theme { 
+    --text-color: #53a1b3; /* firefox dark reader light blue */
+    --bkg-color: #141e24; 
+  }
+}
+
+
+@media (prefers-color-scheme: light) {  
+  /* Override dark mode with light mode styles if the user decides to swap */
+  body.light-theme {
+    --text-color: #000;
+    --bkg-color: #fff; 
+  }
+}
+
 h1 {
     font-size: 3em;
     font-weight: bold;
@@ -76,7 +102,7 @@ img, embed, object, video {
 
 ::selection {
     background: $highlight-darken-3;
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
 a {
